@@ -6,8 +6,14 @@ public class HelloWorld {
     
     public static void main(String[] args) {
         
-        get("/hello", (req, res) -> {
-            return "Hello World !";
+        staticFiles.location("/public");
+        get("/home", (req, res) -> {
+             return "Hello World !";
         });
-    }
+        
+        get("/home/login", (req, res) -> {
+             return "Login page !";
+        });
+
+    }       
 }
